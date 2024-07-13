@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Car: Codable {
+struct Car: Codable, Hashable {
     var REG_ADDR_KOATUU : String
     var person: String
     var operCode: String
@@ -54,7 +54,12 @@ struct Car: Codable {
     }
 }
 
-class CarHistoryFileManager {
+import Foundation
+import Combine
+
+class CarHistoryFileManager: ObservableObject {
+    @Published var carHistory: [Car] = []
+    
     private let fileManager = FileManager.default
     private let fileName = "CarHistory.json"
     
@@ -62,19 +67,47 @@ class CarHistoryFileManager {
         fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
     }
     
+    init() {
+        loadHistory()
+    }
+    
     func saveCar(_ car: Car) {
-        var history = loadHistory()
-        history.append(car)
-        if let encoded = try? JSONEncoder().encode(history) {
+        carHistory.insert(car, at: 0) // Insert the new car at the beginning of the array
+        if let encoded = try? JSONEncoder().encode(carHistory) {
             try? encoded.write(to: fileURL)
         }
     }
     
-    func loadHistory() -> [Car] {
+    func loadHistory() {
         if let data = try? Data(contentsOf: fileURL),
            let decoded = try? JSONDecoder().decode([Car].self, from: data) {
-            return decoded
+            carHistory = decoded
         }
-        return []
+    }
+    func clearHistory() {
+        carHistory.removeAll() // Clear the in-memory history
+        if let encoded = try? JSONEncoder().encode(carHistory) {
+            try? encoded.write(to: fileURL) // Write the empty array to the file
+        }
     }
 }
+let testCar = Car(dict: ["MODEL": "GOLF", //+
+                         "OWN_WEIGHT": "1020", //
+                         "COLOR": "БІЛИЙ", //
+                         "BODY": "ХЕТЧБЕК", //
+                         "BRAND": "VOLKSWAGEN",//
+                         "KIND": "ЛЕГКОВИЙ", //
+                         "TOTAL_WEIGHT": "1850", //
+                         "N_REG_NEW": "АІ2805ОН", //
+                         "DEP_CODE": "12286", //
+                         "VIN": "WVWZZZ1KZCW268678", //
+                         "REG_ADDR_KOATUU": "5610700000",
+                         "FUEL": "БЕНЗИН", //
+                         "PURPOSE": "ЗАГАЛЬНИЙ", //
+                         "PERSON": "P", //
+                         "DEP": "ТСЦ 3247", //
+                         "D_REG": "09.12.2022", //
+                         "CAPACITY": "1390", //
+                         "MAKE_YEAR": "2012", //
+                         "OPER_CODE": "315",
+                         "OPER_NAME": "ПЕРЕРЕЄСТРАЦІЯ ТЗ НА НОВ. ВЛАСН. ПО ДОГОВОРУ УКЛАДЕНОМУ В ТСЦ"])

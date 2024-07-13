@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C900DB4C2C3F490300C040CB /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900DB4B2C3F490300C040CB /* SearchScreen.swift */; };
 		C900DB4E2C3F54FC00C040CB /* SavedNumberBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */; };
+		C9639C632C432A2D003175F4 /* CarHistory.json in Resources */ = {isa = PBXBuildFile; fileRef = C9639C622C432A2D003175F4 /* CarHistory.json */; };
 		C9A8B3162C4313A90087C104 /* FileWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8B3152C4313A90087C104 /* FileWork.swift */; };
 		C9A9E3A22C42AFFC00EFA046 /* InfoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9E3A12C42AFFC00EFA046 /* InfoPreview.swift */; };
 		C9A9E3A42C42C6F700EFA046 /* SingleParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9E3A32C42C6F700EFA046 /* SingleParameterView.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		C900DB4B2C3F490300C040CB /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNumberBox.swift; sourceTree = "<group>"; };
+		C9639C622C432A2D003175F4 /* CarHistory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CarHistory.json; sourceTree = "<group>"; };
 		C9A8B3152C4313A90087C104 /* FileWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWork.swift; sourceTree = "<group>"; };
 		C9A9E3A12C42AFFC00EFA046 /* InfoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPreview.swift; sourceTree = "<group>"; };
 		C9A9E3A32C42C6F700EFA046 /* SingleParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleParameterView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */,
 				C9A8B3152C4313A90087C104 /* FileWork.swift */,
 				C9C711F52C3DA3F700F910B6 /* Item.swift */,
+				C9639C622C432A2D003175F4 /* CarHistory.json */,
 				C9B04C902C40910E00AC89F5 /* TableHandler.swift */,
 				C9C711F72C3DA3F900F910B6 /* Assets.xcassets */,
 				C9C711F92C3DA3F900F910B6 /* Preview Content */,
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9C711FB2C3DA3F900F910B6 /* Preview Assets.xcassets in Resources */,
+				C9639C632C432A2D003175F4 /* CarHistory.json in Resources */,
 				C9C711F82C3DA3F900F910B6 /* Assets.xcassets in Resources */,
 				C9B04C962C40AA9E00AC89F5 /* trialFile.csv in Resources */,
 			);

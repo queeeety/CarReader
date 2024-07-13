@@ -13,10 +13,13 @@ struct TypeNumber: View {
     @State private var isAlert = false
     @State private var cData : [String:String] = [:]
     @State private var bgColor = Color.blue
+    @EnvironmentObject var carHistoryManager: CarHistoryFileManager
+    
     var body: some View {
         if (isSubmitted){
             let car = Car(dict: cData)
             infoPage(car: car)
+                .onAppear{carHistoryManager.saveCar(car)}
         }
         else{
             ZStack{

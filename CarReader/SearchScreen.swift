@@ -14,13 +14,14 @@ struct SearchScreen: View {
     @State private var showCarInfo = false
     @State private var showNumbers = false
     @State private var bgColor = Color.blue
-
+    @EnvironmentObject var carHistoryManager: CarHistoryFileManager
     
     var body: some View {
         if showCarInfo
         {
             let car = Car(dict:cData)
             infoPage(car:car)
+                .onAppear{carHistoryManager.saveCar(car)}
         }
         else if showNumbers {
             TypeNumber()

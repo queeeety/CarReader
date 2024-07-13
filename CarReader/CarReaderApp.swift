@@ -14,14 +14,16 @@ import Foundation
 
 
 @main
-struct MyApp: App {
+struct CarReaderApp: App {
+    @StateObject private var carHistoryManager = CarHistoryFileManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(carHistoryManager)
         }
     }
 }
-
 let screenSize = UIScreen.main.bounds.size
 
 
