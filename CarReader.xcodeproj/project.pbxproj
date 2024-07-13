@@ -7,20 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C900DB4C2C3F490300C040CB /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900DB4B2C3F490300C040CB /* SearchScreen.swift */; };
+		C900DB4E2C3F54FC00C040CB /* SavedNumberBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */; };
+		C9A8B3142C42DAC00087C104 /* infoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8B3112C42CCB80087C104 /* infoPage.swift */; };
+		C9A9E3A22C42AFFC00EFA046 /* InfoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9E3A12C42AFFC00EFA046 /* InfoPreview.swift */; };
+		C9A9E3A42C42C6F700EFA046 /* SingleParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9E3A32C42C6F700EFA046 /* SingleParameterView.swift */; };
+		C9B04C8D2C400FC600AC89F5 /* TypeNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B04C8C2C400FC600AC89F5 /* TypeNumber.swift */; };
+		C9B04C8F2C4090E900AC89F5 /* dataset.csv in Resources */ = {isa = PBXBuildFile; fileRef = C9B04C8E2C4090E900AC89F5 /* dataset.csv */; };
+		C9B04C912C40910E00AC89F5 /* TableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B04C902C40910E00AC89F5 /* TableHandler.swift */; };
+		C9B04C942C4091C700AC89F5 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = C9B04C932C4091C700AC89F5 /* SwiftCSV */; };
+		C9B04C962C40AA9E00AC89F5 /* trialFile.csv in Resources */ = {isa = PBXBuildFile; fileRef = C9B04C952C40AA9E00AC89F5 /* trialFile.csv */; };
 		C9C711F22C3DA3F700F910B6 /* CarReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C711F12C3DA3F700F910B6 /* CarReaderApp.swift */; };
 		C9C711F42C3DA3F700F910B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C711F32C3DA3F700F910B6 /* ContentView.swift */; };
 		C9C711F62C3DA3F700F910B6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C711F52C3DA3F700F910B6 /* Item.swift */; };
 		C9C711F82C3DA3F900F910B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C711F72C3DA3F900F910B6 /* Assets.xcassets */; };
 		C9C711FB2C3DA3F900F910B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C711FA2C3DA3F900F910B6 /* Preview Assets.xcassets */; };
+		C9C712052C3DE99000F910B6 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C712042C3DE99000F910B6 /* CameraViewController.swift */; };
+		C9C712072C3DEA2000F910B6 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C712062C3DEA2000F910B6 /* CameraView.swift */; };
+		C9C712092C3DF46100F910B6 /* Trial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C712082C3DF46100F910B6 /* Trial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C900DB4B2C3F490300C040CB /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
+		C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNumberBox.swift; sourceTree = "<group>"; };
+		C9A8B3112C42CCB80087C104 /* infoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoPage.swift; sourceTree = "<group>"; };
+		C9A9E3A12C42AFFC00EFA046 /* InfoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPreview.swift; sourceTree = "<group>"; };
+		C9A9E3A32C42C6F700EFA046 /* SingleParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleParameterView.swift; sourceTree = "<group>"; };
+		C9B04C8C2C400FC600AC89F5 /* TypeNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeNumber.swift; sourceTree = "<group>"; };
+		C9B04C8E2C4090E900AC89F5 /* dataset.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dataset.csv; path = CarReader/dataset.csv; sourceTree = SOURCE_ROOT; };
+		C9B04C902C40910E00AC89F5 /* TableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableHandler.swift; path = CarReader/TableHandler.swift; sourceTree = SOURCE_ROOT; };
+		C9B04C952C40AA9E00AC89F5 /* trialFile.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trialFile.csv; sourceTree = "<group>"; };
 		C9C711EE2C3DA3F700F910B6 /* CarReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C711F12C3DA3F700F910B6 /* CarReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarReaderApp.swift; sourceTree = "<group>"; };
 		C9C711F32C3DA3F700F910B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C9C711F52C3DA3F700F910B6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C9C711F72C3DA3F900F910B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9C711FA2C3DA3F900F910B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9C712032C3DD45300F910B6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C9C712042C3DE99000F910B6 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		C9C712062C3DEA2000F910B6 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		C9C712082C3DF46100F910B6 /* Trial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B04C942C4091C700AC89F5 /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +64,8 @@
 		C9C711E52C3DA3F700F910B6 = {
 			isa = PBXGroup;
 			children = (
+				C9A8B3112C42CCB80087C104 /* infoPage.swift */,
+				C9C712032C3DD45300F910B6 /* MyPlayground.playground */,
 				C9C711F02C3DA3F700F910B6 /* CarReader */,
 				C9C711EF2C3DA3F700F910B6 /* Products */,
 			);
@@ -53,9 +82,20 @@
 		C9C711F02C3DA3F700F910B6 /* CarReader */ = {
 			isa = PBXGroup;
 			children = (
+				C9B04C952C40AA9E00AC89F5 /* trialFile.csv */,
+				C9B04C8E2C4090E900AC89F5 /* dataset.csv */,
+				C9C712042C3DE99000F910B6 /* CameraViewController.swift */,
+				C9C712062C3DEA2000F910B6 /* CameraView.swift */,
 				C9C711F12C3DA3F700F910B6 /* CarReaderApp.swift */,
+				C9C712082C3DF46100F910B6 /* Trial.swift */,
+				C9A9E3A32C42C6F700EFA046 /* SingleParameterView.swift */,
+				C9A9E3A12C42AFFC00EFA046 /* InfoPreview.swift */,
 				C9C711F32C3DA3F700F910B6 /* ContentView.swift */,
+				C900DB4B2C3F490300C040CB /* SearchScreen.swift */,
+				C9B04C8C2C400FC600AC89F5 /* TypeNumber.swift */,
+				C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */,
 				C9C711F52C3DA3F700F910B6 /* Item.swift */,
+				C9B04C902C40910E00AC89F5 /* TableHandler.swift */,
 				C9C711F72C3DA3F900F910B6 /* Assets.xcassets */,
 				C9C711F92C3DA3F900F910B6 /* Preview Content */,
 			);
@@ -86,6 +126,9 @@
 			dependencies = (
 			);
 			name = CarReader;
+			packageProductDependencies = (
+				C9B04C932C4091C700AC89F5 /* SwiftCSV */,
+			);
 			productName = CarReader;
 			productReference = C9C711EE2C3DA3F700F910B6 /* CarReader.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +157,9 @@
 				Base,
 			);
 			mainGroup = C9C711E52C3DA3F700F910B6;
+			packageReferences = (
+				C9B04C922C4091C700AC89F5 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+			);
 			productRefGroup = C9C711EF2C3DA3F700F910B6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,6 +176,8 @@
 			files = (
 				C9C711FB2C3DA3F900F910B6 /* Preview Assets.xcassets in Resources */,
 				C9C711F82C3DA3F900F910B6 /* Assets.xcassets in Resources */,
+				C9B04C8F2C4090E900AC89F5 /* dataset.csv in Resources */,
+				C9B04C962C40AA9E00AC89F5 /* trialFile.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +189,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9C711F42C3DA3F700F910B6 /* ContentView.swift in Sources */,
+				C900DB4C2C3F490300C040CB /* SearchScreen.swift in Sources */,
+				C9A9E3A22C42AFFC00EFA046 /* InfoPreview.swift in Sources */,
+				C9C712052C3DE99000F910B6 /* CameraViewController.swift in Sources */,
 				C9C711F62C3DA3F700F910B6 /* Item.swift in Sources */,
+				C900DB4E2C3F54FC00C040CB /* SavedNumberBox.swift in Sources */,
+				C9C712072C3DEA2000F910B6 /* CameraView.swift in Sources */,
+				C9B04C8D2C400FC600AC89F5 /* TypeNumber.swift in Sources */,
+				C9C712092C3DF46100F910B6 /* Trial.swift in Sources */,
 				C9C711F22C3DA3F700F910B6 /* CarReaderApp.swift in Sources */,
+				C9A8B3142C42DAC00087C104 /* infoPage.swift in Sources */,
+				C9A9E3A42C42C6F700EFA046 /* SingleParameterView.swift in Sources */,
+				C9B04C912C40910E00AC89F5 /* TableHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -258,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -279,11 +337,12 @@
 				DEVELOPMENT_TEAM = B23L3JWP6N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Для зчитування номеру";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,11 +367,12 @@
 				DEVELOPMENT_TEAM = B23L3JWP6N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Для зчитування номеру";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9B04C922C4091C700AC89F5 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9B04C932C4091C700AC89F5 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9B04C922C4091C700AC89F5 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9C711E62C3DA3F700F910B6 /* Project object */;
 }

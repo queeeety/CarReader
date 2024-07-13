@@ -7,26 +7,30 @@
 
 import SwiftUI
 import SwiftData
+import Vision
+import AVFoundation
+import Foundation
+
+
 
 @main
-struct CarReaderApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+struct MyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
     }
 }
+
+let screenSize = UIScreen.main.bounds.size
+
+
+func Greetings() -> String {
+    let hello = ["Доброї ночі!", "Доброго ранку!", "Доброго дня", "Доброго вечора"]
+    let currentDate = Date()
+    let calendar = Calendar.current
+    let hour = calendar.component(.hour, from: currentDate)
+    return hello[((hour + 1) % 24) / 6]
+}
+
+

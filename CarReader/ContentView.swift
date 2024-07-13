@@ -1,61 +1,80 @@
-//
-//  ContentView.swift
-//  CarReader
-//
-//  Created by Тимофій Безверхий on 09.07.2024.
-//
-
 import SwiftUI
-import SwiftData
-
+import SwiftCSV
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        NavigationView(content: {
+            ZStack{
+                RadialGradient(
+                    colors: [.blue, .white],
+                    center: .topLeading,
+                    startRadius: 0,
+                    endRadius: screenSize.width*2)
+                .edgesIgnoringSafeArea(.all)
+                
+                VStack{
+                    Text(Greetings())
+                        .bold()
+                        .font(.system(size: 34, weight: .bold, design: .default))
+                        .multilineTextAlignment(.center)
+                        .padding(.top,30)
+                        .frame(maxWidth: .infinity)
+                        .foregroundStyle(Color(.white))
+                    Spacer(minLength: 20)
+                    
+                    Text("Нещодавні")
+                        .bold()
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .multilineTextAlignment(.center)
+                        .padding(.top,30)
+                        .foregroundStyle(Color(.white))
+                    
+                    ZStack{
+                        VStack{
+                            ScrollView{
+                                SavedNumberBox(number: "AX 2020 AX", carName: "Машинка 1")
+                                SavedNumberBox(number: "AX 2020 AX", carName: "Машинка 1")
+                                SavedNumberBox(number: "AX 2020 AX", carName: "Машинка 1")
+                                SavedNumberBox(number: "AX 2020 AX", carName: "Машинка 1")
+                                SavedNumberBox(number: "AX 2020 AX", carName: "Машинка 1")
+                            }
+                        }
+                        
+                        VStack{
+                            Spacer()
+                            
+                            NavigationLink(destination:SearchScreen()) {
+                                ZStack(alignment: .center) {
+                                    Rectangle()
+                                        .frame(maxHeight: 100)
+                                        .foregroundStyle(Color.clear)
+                                        .blur(radius: /*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                                    
+                                    RoundedRectangle(cornerRadius: 190)
+                                        .frame(maxHeight: 80)
+                                        .padding(10)
+                                        .foregroundColor(.blue)
+                                    HStack{
+                                        Image(systemName: "magnifyingglass")
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 24, weight: .bold))
+                                        
+                                        Text("Шукати")
+                                            .bold()
+                                            .font(.system(size: 30, weight: .bold, design: .default))
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                            }
+
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+        })
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
