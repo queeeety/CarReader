@@ -43,6 +43,7 @@ struct TypeNumber: View {
                         .padding(8)
                         .background(bgColor)
                         .cornerRadius(10)
+                        .autocorrectionDisabled()
                         .onSubmit() {
                             if NumberCheck(inputStr: number){
                                 
