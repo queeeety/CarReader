@@ -15,7 +15,8 @@ struct TypeNumber: View {
     @State private var bgColor = Color.blue
     var body: some View {
         if (isSubmitted){
-            infoPage(info: cData)
+            let car = Car(dict: cData)
+            infoPage(car: car)
         }
         else{
             ZStack{

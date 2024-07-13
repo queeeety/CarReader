@@ -19,7 +19,8 @@ struct SearchScreen: View {
     var body: some View {
         if showCarInfo
         {
-            infoPage(info: cData)
+            let car = Car(dict:cData)
+            infoPage(car:car)
         }
         else if showNumbers {
             TypeNumber()

@@ -8,10 +8,30 @@
 import SwiftUI
 
 struct infoPage: View {
- @State var info: [String:String]
+ @State var info: [String:String] = ["MODEL": " ", //+
+                                    "OWN_WEIGHT": " ", //
+                                    "COLOR": " ", //
+                                    "BODY": " ", //
+                                    "BRAND": " ",//
+                                    "KIND": " ", //
+                                    "TOTAL_WEIGHT": " ", //
+                                    "N_REG_NEW": " ", //
+                                    "DEP_CODE": " ", //
+                                    "VIN": " ", //
+                                    "REG_ADDR_KOATUU": " ",
+                                    "FUEL": " ", //
+                                    "PURPOSE": " ", //
+                                    "PERSON": " ", //
+                                    "DEP": " ", //
+                                    "D_REG": " ", //
+                                    "CAPACITY": " ", //
+                                    "MAKE_YEAR": " ", //
+                                    "OPER_CODE": " ",
+                                    "OPER_NAME": " "]
+    @State var car: Car
         let UEInp = "?"
     
-    let car: Car = ()
+
         var body: some View {
             ZStack {
                 RadialGradient(
@@ -21,59 +41,58 @@ struct infoPage: View {
                     endRadius: screenSize.width*2)
                 .edgesIgnoringSafeArea(.all)
                 VStack(alignment: .center){
-                    Text((info["BRAND"] ?? UEInp) + " " + (info["MODEL"] ?? UEInp))
+                    Text(car.brand + " " + car.model)
                         .font(.title)
                         .bold()
-                    Text((info["MAKE_YEAR"] ?? UEInp) + " року")
+                    Text(car.year + " року")
                         .font(.title)
                     ScrollView{
                         HStack{
-                            SingleParameterView(iconName: "b.circle", parName: "Бренд", parValue:(info["BRAND"] ?? UEInp))
-                            SingleParameterView(iconName: "m.circle", parName: "Модель", parValue:(info["MODEL"] ?? UEInp))
+                            SingleParameterView(iconName: "b.circle", parName: "Бренд", parValue:car.brand)
+                            SingleParameterView(iconName: "m.circle", parName: "Модель", parValue:car.model)
                         }
                         HStack{
-                            SingleParameterView(iconName: "car.fill", parName: "Тип", parValue:(info["KIND"] ?? UEInp))
-                            SingleParameterView(iconName: "car.rear.fill", parName: "Тип кузову", parValue:(info["BODY"] ?? UEInp))
+                            SingleParameterView(iconName: "car.fill", parName: "Тип", parValue:car.kind)
+                            SingleParameterView(iconName: "car.rear.fill", parName: "Тип кузову", parValue:car.body)
                             
                         }
-                        SingleParameterView(iconName: "engine.combustion", parName: "VIN номер", parValue:(info["VIN"] ?? UEInp))
+                        SingleParameterView(iconName: "engine.combustion", parName: "VIN номер", parValue:car.vin)
                         HStack{
-                            SingleParameterView(iconName: "calendar", parName: "Рік випуску", parValue:(info["MAKE_YEAR"] ?? UEInp))
-                            SingleParameterView(iconName: "calendar", parName: "Дата реєстрації", parValue:(info["D_REG"] ?? UEInp))
+                            SingleParameterView(iconName: "calendar", parName: "Рік випуску", parValue:car.year)
+                            SingleParameterView(iconName: "calendar", parName: "Дата реєстрації", parValue:car.regDate)
                         }
                         HStack{
-                            SingleParameterView(iconName: "calendar", parName: "Номер", parValue:(info["N_REG_NEW"] ?? UEInp))
+                            SingleParameterView(iconName: "calendar", parName: "Номер", parValue:car.regNumber)
                             SingleParameterView(iconName: "person.circle", parName: "Власник", parValue:(
-                                (info["PERSON"] == "P" ? "Фіз. особа" : (info["PERSON"] ?? ""))))
+                                (car.person == "P" ? "Фіз. особа" : car.person)))
                         }
                         HStack {
-                            SingleParameterView(iconName: "paintbrush.fill", parName: "Колір", parValue:(info["COLOR"] ?? UEInp))
+                            SingleParameterView(iconName: "paintbrush.fill", parName: "Колір", parValue:car.color)
                             
-                            SingleParameterView(iconName: "questionmark.circle", parName: "Призначення", parValue:(info["PURPOSE"] ?? UEInp))
+                            SingleParameterView(iconName: "questionmark.circle", parName: "Призначення", parValue:car.purpose)
                         }
                         HStack {
-                            SingleParameterView(iconName: "gauge.with.dots.needle.bottom.0percent", parName: "Власна вага", parValue:(info["OWN_WEIGHT"] ?? UEInp) + " кг")
+                            SingleParameterView(iconName: "gauge.with.dots.needle.bottom.0percent", parName: "Власна вага", parValue:car.ownWeight + " кг")
                             
-                            SingleParameterView(iconName: "gauge.with.dots.needle.bottom.100percent", parName: "Максимальна вага", parValue:(info["TOTAL_WEIGHT"] ?? UEInp) + " кг")
+                            SingleParameterView(iconName: "gauge.with.dots.needle.bottom.100percent", parName: "Максимальна вага", parValue:car.totalWeight + " кг")
                         }
                         
                         HStack{
-                            SingleParameterView(iconName: "fuelpump.fill", parName: "Паливо", parValue:(info["FUEL"] ?? UEInp))
+                            SingleParameterView(iconName: "fuelpump.fill", parName: "Паливо", parValue:car.fuel)
                             
-                            SingleParameterView(iconName: "engine.combustion", parName: "Обʼєм двигуна", parValue:(info["CAPACITY"] ?? UEInp))
+                            SingleParameterView(iconName: "engine.combustion", parName: "Обʼєм двигуна", parValue:car.capacity)
                         }
                         HStack{
-                            SingleParameterView(iconName: "barcode.viewfinder", parName: "Код відділення", parValue:(info["DEP_CODE"] ?? UEInp))
+                            SingleParameterView(iconName: "barcode.viewfinder", parName: "Код відділення", parValue:car.depCode)
                             
-                            SingleParameterView(iconName: "building.columns.circle", parName: "Відділення", parValue:(info["DEP"] ?? UEInp))
+                            SingleParameterView(iconName: "building.columns.circle", parName: "Відділення", parValue:car.dep)
                         }
                         HStack{
-                            SingleParameterView(iconName: "barcode.viewfinder", parName: "Код операції", parValue:(info["OPER_CODE"] ?? UEInp))
+                            SingleParameterView(iconName: "barcode.viewfinder", parName: "Код операції", parValue:car.operCode)
                             
-                            SingleParameterView(iconName: "building.columns.circle", parName: "REG_ADDR_KOATUU", parValue:(info["REG_ADDR_KOATUU"] ?? UEInp))
+                            SingleParameterView(iconName: "building.columns.circle", parName: "REG_ADDR_KOATUU", parValue:car.REG_ADDR_KOATUU)
                         }
-                        SingleParameterView(iconName: "building.columns.circle", parName: "Назва операції", parValue:(info["OPER_NAME"] ?? UEInp))
-                        
+                        SingleParameterView(iconName: "building.columns.circle", parName: "Назва операції", parValue:car.operName)
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 30))
                     .ignoresSafeArea(.all)
@@ -83,7 +102,7 @@ struct infoPage: View {
 }
 
 #Preview {
-    infoPage(info: ["MODEL": "GOLF", //+
+    infoPage(car: Car(dict: ["MODEL": "GOLF", //+
                     "OWN_WEIGHT": "1020", //
                     "COLOR": "БІЛИЙ", //
                     "BODY": "ХЕТЧБЕК", //
@@ -102,5 +121,5 @@ struct infoPage: View {
                     "CAPACITY": "1390", //
                     "MAKE_YEAR": "2012", //
                     "OPER_CODE": "315",
-                    "OPER_NAME": "ПЕРЕРЕЄСТРАЦІЯ ТЗ НА НОВ. ВЛАСН. ПО ДОГОВОРУ УКЛАДЕНОМУ В ТСЦ"])
+                    "OPER_NAME": "ПЕРЕРЕЄСТРАЦІЯ ТЗ НА НОВ. ВЛАСН. ПО ДОГОВОРУ УКЛАДЕНОМУ В ТСЦ"]))
 }
