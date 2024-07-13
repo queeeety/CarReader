@@ -66,7 +66,7 @@ struct infoPage: View {
                             SingleParameterView(iconName: "building.columns.circle", parName: "Відділення", parValue:(info["DEP"] ?? UEInp))
                         }
                         HStack{
-                            SingleParameterView(iconName: "barcode.viewfinder", parName: "Код операції", parValue:(info["DEP_CODE"] ?? UEInp))
+                            SingleParameterView(iconName: "barcode.viewfinder", parName: "Код операції", parValue:(info["OPER_CODE"] ?? UEInp))
                             
                             SingleParameterView(iconName: "building.columns.circle", parName: "REG_ADDR_KOATUU", parValue:(info["REG_ADDR_KOATUU"] ?? UEInp))
                         }

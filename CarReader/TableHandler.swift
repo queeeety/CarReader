@@ -34,8 +34,9 @@ func convertLatinToCyrillic(_ latinString: String) -> String {
 }
 func NumbersCheck (num: String) -> [String:String]
 {
-
-    let CyrNum = convertLatinToCyrillic(num)
+    
+    var CyrNum = convertLatinToCyrillic(num)
+    CyrNum = CyrNum.replacingOccurrences(of: " ", with: "")
     let fileName = "trialFile"
     let data : [[String:String]]
     let keyOrder = ["N_REG_NEW", "REG_ADDR_KOATUU", "OPER_CODE", "OPER_NAME","D_REG", "DEP_CODE", "DEP", "BRAND", "MODEL", "VIN", "MAKE_YEAR", "COLOR", "KIND", "BODY", "PURPOSE", "FUEL", "CAPACITY", "OWN_WEIGHT", "TOTAL_WEIGHT"]
@@ -65,3 +66,19 @@ func NumbersCheck (num: String) -> [String:String]
     return ["1":"NoElement"]
     
 }
+
+func NumberCheck (inputStr: String) -> Bool{
+    let str = inputStr.replacingOccurrences(of: " ", with: "")
+    if (str.count == 8
+        && str.prefix(2).allSatisfy({$0.isLetter})
+        && str.suffix(2).allSatisfy({$0.isLetter})
+        && str.dropFirst(2).prefix(4).allSatisfy({$0.isNumber})
+    ){
+        return true
+    }
+    else{
+        return false
+    }
+    
+}
+

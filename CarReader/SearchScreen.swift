@@ -13,6 +13,8 @@ struct SearchScreen: View {
     @State private var navigateToTheNextPage = false
     @State private var showCarInfo = false
     @State private var showNumbers = false
+    @State private var bgColor = Color.blue
+
     
     var body: some View {
         if showCarInfo
@@ -20,12 +22,12 @@ struct SearchScreen: View {
             infoPage(info: cData)
         }
         else if showNumbers {
-            
+            TypeNumber()
         }
         else{
             ZStack {
                 RadialGradient(
-                    colors: [.blue, .white],
+                    colors: [bgColor, .white],
                     center: .topLeading,
                     startRadius: 0,
                     endRadius: screenSize.width*2)
@@ -54,14 +56,18 @@ struct SearchScreen: View {
                                 .onAppear {
                                     self.cData = NumbersCheck(num: recognizedText)
                                 }
-                            if cData["1"] == "NoElement" {
+                            if cData.count <= 1 {
                                 Text("No Element Found")
-                                    .alert(isPresented: $showingAlert) {
-                                        Alert(title: Text("Помилка"), message: Text("Номеру \(recognizedText) не знайдено"), dismissButton: .default(Text("OK"), action: {
+                                    .alert("Помилка", isPresented: $showingAlert, actions: {
+                                        Button("OK", role: .cancel) {
                                             self.recognizedText = nil
-                                        }))
-                                    }
+                                            bgColor = Color.blue
+                                        }
+                                    }, message: {
+                                        Text("Номеру не знайдено")
+                                    })
                                     .onAppear {
+                                        bgColor = Color.red
                                         showingAlert = true
                                     }
                             } else {
@@ -71,15 +77,6 @@ struct SearchScreen: View {
                                     .onAppear {
                                         showCarInfo = true
                                     }
-
-                                //                            NavigationLink(destination: infoPage(info: carData), isActive: $navigateToTheNextPage) {
-                                //                                EmptyView()
-                                //                            }
-                                //                            .onAppear{
-                                //                                navigateToTheNextPage = true
-                                //                            }
-                                
-                                
                             }
                         } else {
                             CameraView(recognizedText: $recognizedText)
@@ -90,7 +87,9 @@ struct SearchScreen: View {
                     .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                     .padding([.leading,.trailing,.bottom],10)
                     
-                    NavigationLink(destination:TypeNumber()) {
+                    Button{
+                        showNumbers = true
+                    }label: {
                         ZStack(alignment: .center) {
                             Rectangle()
                                 .frame(maxHeight: 100)
@@ -100,7 +99,7 @@ struct SearchScreen: View {
                             RoundedRectangle(cornerRadius: 190)
                                 .frame(maxHeight: 80)
                                 .padding(10)
-                                .foregroundColor(.blue)
+                                .foregroundColor(bgColor)
                             HStack{
                                 Image(systemName: "keyboard")
                                     .foregroundColor(.white)

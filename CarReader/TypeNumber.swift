@@ -10,68 +10,70 @@ import SwiftUI
 struct TypeNumber: View {
     @State private var number = ""
     @State private var isSubmitted = false
+    @State private var isAlert = false
+    @State private var cData : [String:String] = [:]
+    @State private var bgColor = Color.blue
     var body: some View {
-        ZStack{
-            RadialGradient(
-                colors: [.blue, .white],
-                center: .topLeading,
-                startRadius: 0,
-                endRadius: screenSize.width*2)
-            .edgesIgnoringSafeArea(.all)
-            VStack{
-                Text("Пошук")
-                    .bold()
-                    .font(.system(size: 34, weight: .bold, design: .default))
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity)
-                    .foregroundStyle(Color(.white))
-                
-                TextField("Enter", text: $number)
-                    .textFieldStyle(.plain)
-                    .foregroundStyle(Color.white)
-                    .padding(8)
-                    .background(.blue)
-                    .cornerRadius(10)
-                    .onSubmit() {
-                        isSubmitted = true
-                    }
-                    .padding([.bottom,.leading,.trailing])
-                    .textInputAutocapitalization(.characters)
-                
-                Spacer()
-                
-                if (isSubmitted){
-                    NavigationLink(destination:SearchScreen()) {
-                        ZStack(alignment: .center) {
-                            Rectangle()
-                                .frame(maxHeight: 100)
-                                .foregroundStyle(Color.clear)
-                                .blur(radius: /*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
-                            
-                            RoundedRectangle(cornerRadius: 190)
-                                .frame(maxHeight: 80)
-                                .padding(10)
-                                .foregroundColor(.blue)
-                            HStack{
-                                Image(systemName: "keyboard")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 24, weight: .bold))
+        if (isSubmitted){
+            infoPage(info: cData)
+        }
+        else{
+            ZStack{
+                RadialGradient(
+                    colors: [bgColor, .white],
+                    center: .topLeading,
+                    startRadius: 0,
+                    endRadius: screenSize.width*2)
+                .edgesIgnoringSafeArea(.all)
+                VStack{
+                    Text("Пошук")
+                        .bold()
+                        .font(.system(size: 34, weight: .bold, design: .default))
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity)
+                        .foregroundStyle(Color(.white))
+                    
+                    TextField("Enter", text: $number)
+                        .textFieldStyle(.plain)
+                        .foregroundStyle(Color.white)
+                        .padding(8)
+                        .background(bgColor)
+                        .cornerRadius(10)
+                        .onSubmit() {
+                            if NumberCheck(inputStr: number){
                                 
-                                Text("Ввести номер")
-                                    .bold()
-                                    .font(.system(size: 30, weight: .bold, design: .default))
-                                    .foregroundColor(.white)
+                                cData = NumbersCheck(num: number)
+                                if cData.count == 1{
+                                    bgColor = Color.red
+                                    isAlert = true
+                                }
+                                else{
+                                    isSubmitted = true
+                                }
+                            }
+                            else
+                            {
+                                bgColor = Color.red
+                                isAlert = true
+                                number = ""
                             }
                         }
-                    }
-                    .frame(alignment: .bottom)
+                        .padding([.bottom,.leading,.trailing])
+                        .textInputAutocapitalization(.characters)
+                        .alert("Помилка", isPresented: $isAlert, actions: {
+                            Button("OK", role: .cancel) {
+                                self.number = ""
+                                bgColor = Color.blue
+                            }
+                        }, message: {
+                            Text("Номеру не знайдено")
+                        })
+                    Spacer()
+                    
                 }
             }
-            
-            
         }
     }
-    
 }
 
 #Preview {
