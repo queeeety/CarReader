@@ -10,10 +10,10 @@
 		C900DB4C2C3F490300C040CB /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900DB4B2C3F490300C040CB /* SearchScreen.swift */; };
 		C900DB4E2C3F54FC00C040CB /* SavedNumberBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */; };
 		C9A8B3142C42DAC00087C104 /* infoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8B3112C42CCB80087C104 /* infoPage.swift */; };
+		C9A8B3162C4313A90087C104 /* FileWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8B3152C4313A90087C104 /* FileWork.swift */; };
 		C9A9E3A22C42AFFC00EFA046 /* InfoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9E3A12C42AFFC00EFA046 /* InfoPreview.swift */; };
 		C9A9E3A42C42C6F700EFA046 /* SingleParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9E3A32C42C6F700EFA046 /* SingleParameterView.swift */; };
 		C9B04C8D2C400FC600AC89F5 /* TypeNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B04C8C2C400FC600AC89F5 /* TypeNumber.swift */; };
-		C9B04C8F2C4090E900AC89F5 /* dataset.csv in Resources */ = {isa = PBXBuildFile; fileRef = C9B04C8E2C4090E900AC89F5 /* dataset.csv */; };
 		C9B04C912C40910E00AC89F5 /* TableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B04C902C40910E00AC89F5 /* TableHandler.swift */; };
 		C9B04C942C4091C700AC89F5 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = C9B04C932C4091C700AC89F5 /* SwiftCSV */; };
 		C9B04C962C40AA9E00AC89F5 /* trialFile.csv in Resources */ = {isa = PBXBuildFile; fileRef = C9B04C952C40AA9E00AC89F5 /* trialFile.csv */; };
@@ -31,10 +31,10 @@
 		C900DB4B2C3F490300C040CB /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNumberBox.swift; sourceTree = "<group>"; };
 		C9A8B3112C42CCB80087C104 /* infoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoPage.swift; sourceTree = "<group>"; };
+		C9A8B3152C4313A90087C104 /* FileWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWork.swift; sourceTree = "<group>"; };
 		C9A9E3A12C42AFFC00EFA046 /* InfoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPreview.swift; sourceTree = "<group>"; };
 		C9A9E3A32C42C6F700EFA046 /* SingleParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleParameterView.swift; sourceTree = "<group>"; };
 		C9B04C8C2C400FC600AC89F5 /* TypeNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeNumber.swift; sourceTree = "<group>"; };
-		C9B04C8E2C4090E900AC89F5 /* dataset.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dataset.csv; path = CarReader/dataset.csv; sourceTree = SOURCE_ROOT; };
 		C9B04C902C40910E00AC89F5 /* TableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableHandler.swift; path = CarReader/TableHandler.swift; sourceTree = SOURCE_ROOT; };
 		C9B04C952C40AA9E00AC89F5 /* trialFile.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trialFile.csv; sourceTree = "<group>"; };
 		C9C711EE2C3DA3F700F910B6 /* CarReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				C9B04C952C40AA9E00AC89F5 /* trialFile.csv */,
-				C9B04C8E2C4090E900AC89F5 /* dataset.csv */,
 				C9C712042C3DE99000F910B6 /* CameraViewController.swift */,
 				C9C712062C3DEA2000F910B6 /* CameraView.swift */,
 				C9C711F12C3DA3F700F910B6 /* CarReaderApp.swift */,
@@ -94,6 +93,7 @@
 				C900DB4B2C3F490300C040CB /* SearchScreen.swift */,
 				C9B04C8C2C400FC600AC89F5 /* TypeNumber.swift */,
 				C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */,
+				C9A8B3152C4313A90087C104 /* FileWork.swift */,
 				C9C711F52C3DA3F700F910B6 /* Item.swift */,
 				C9B04C902C40910E00AC89F5 /* TableHandler.swift */,
 				C9C711F72C3DA3F900F910B6 /* Assets.xcassets */,
@@ -176,7 +176,6 @@
 			files = (
 				C9C711FB2C3DA3F900F910B6 /* Preview Assets.xcassets in Resources */,
 				C9C711F82C3DA3F900F910B6 /* Assets.xcassets in Resources */,
-				C9B04C8F2C4090E900AC89F5 /* dataset.csv in Resources */,
 				C9B04C962C40AA9E00AC89F5 /* trialFile.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +197,7 @@
 				C9B04C8D2C400FC600AC89F5 /* TypeNumber.swift in Sources */,
 				C9C712092C3DF46100F910B6 /* Trial.swift in Sources */,
 				C9C711F22C3DA3F700F910B6 /* CarReaderApp.swift in Sources */,
+				C9A8B3162C4313A90087C104 /* FileWork.swift in Sources */,
 				C9A8B3142C42DAC00087C104 /* infoPage.swift in Sources */,
 				C9A9E3A42C42C6F700EFA046 /* SingleParameterView.swift in Sources */,
 				C9B04C912C40910E00AC89F5 /* TableHandler.swift in Sources */,

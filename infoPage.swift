@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct infoPage: View {
+struct infoPage2: View {
  @State var info: [String:String]
         let UEInp = "?"
         var body: some View {
