@@ -52,6 +52,15 @@ struct Car: Codable, Hashable {
         self.totalWeight = dict["TOTAL_WEIGHT"] ?? ""
         self.regNumber = dict["N_REG_NEW"] ?? ""
     }
+    func isEmpty () -> Bool{
+        let mirror = Mirror(reflecting: self)
+        for child in mirror.children {
+            if let value = child.value as? String, !value.isEmpty {
+                return false
+            }
+        }
+        return true
+    }
 }
 
 import Foundation
@@ -73,7 +82,7 @@ class CarHistoryFileManager: ObservableObject {
     
     func saveCar(_ car: Car) {
 
-        if carHistory.first != car{
+        if carHistory.first != car && !car.isEmpty(){
             carHistory.insert(car, at: 0) // Insert the new car at the beginning of the array
         }
         if let encoded = try? JSONEncoder().encode(carHistory) {

@@ -18,13 +18,14 @@ struct TypeNumber: View {
     @EnvironmentObject var carHistoryManager: CarHistoryFileManager
     
     var body: some View {
+        ZStack{
         if (showCarInfo){
             let car = Car(dict: cData)
             infoPage(car: car)
                 .onAppear{carHistoryManager.saveCar(car)}
+                .transition(.move(edge: .trailing))
         }
         else{
-            ZStack{
                 RadialGradient(
                     colors: [bgColor, .white],
                     center: .topLeading,
@@ -106,9 +107,9 @@ struct TypeNumber: View {
                 }, message: {
                     Text(errorMessage ?? "Невідома помилка")
                 })
-
-            } // ZStack
-        }
+            }
+        }// ZStack
+        .animation(.easeInOut, value: showCarInfo)
     } // body
 } // struct
 
