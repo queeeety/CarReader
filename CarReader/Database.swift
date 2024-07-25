@@ -3,8 +3,8 @@ import Firebase
 import FirebaseFirestore
 import SwiftCSV
 
-public func getNumberFromCloud(name: String, status: Binding<Bool>) async throws -> [String: String] {
-    defer { status.wrappedValue = false }
+public func getNumberFromCloud(name: String /*,status: Binding<Bool>*/) async throws -> [String: String] {
+//    defer { status.wrappedValue = false }
     let db = Firestore.firestore()
     let cyrName = convertLatinToCyrillic(name)
     // Отримання документа за допомогою async/await

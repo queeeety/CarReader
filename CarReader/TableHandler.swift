@@ -69,16 +69,10 @@ func NumbersCheck (num: String) -> [String:String]
 
 func NumberCheck (inputStr: String) -> Bool{
     let str = inputStr.replacingOccurrences(of: " ", with: "")
-    if (str.count == 8
+    return (str.count == 8
         && str.prefix(2).allSatisfy({$0.isLetter})
         && str.suffix(2).allSatisfy({$0.isLetter})
         && str.dropFirst(2).prefix(4).allSatisfy({$0.isNumber})
-    ){
-        return true
-    }
-    else{
-        return false
-    }
-    
+    )
 }
 

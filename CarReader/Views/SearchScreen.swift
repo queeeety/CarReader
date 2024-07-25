@@ -13,7 +13,6 @@ struct SearchScreen: View {
     @State private var navigateToTheNextPage = false
     @State private var showCarInfo = false
     @State private var showNumbers = false
-    @State private var isLoading = true
     @State private var bgColor = Color.blue
     @EnvironmentObject var carHistoryManager: CarHistoryFileManager
     
@@ -21,11 +20,15 @@ struct SearchScreen: View {
         if showCarInfo
         {
             let car = Car(dict:cData)
-            infoPage(car:car)
-                .onAppear{carHistoryManager.saveCar(car)}
+            withAnimation(.default){
+                infoPage(car:car)
+                    .onAppear{carHistoryManager.saveCar(car)}
+            }
         }
         else if showNumbers {
-            TypeNumber()
+            withAnimation(.default){
+                TypeNumber()
+            }
         }
         else{
             ZStack {
@@ -61,7 +64,7 @@ struct SearchScreen: View {
                                     .frame(minWidth: 100,idealWidth: .infinity, minHeight: 100, idealHeight: 150)
                                     .onAppear{
                                         Task{
-                                            self.cData = try await getNumberFromCloud(name: recognizedText, status: $isLoading)
+                                            self.cData = try await getNumberFromCloud(name: recognizedText)
                                         }
                                     }
                             }
@@ -75,7 +78,9 @@ struct SearchScreen: View {
                                         .alert("Помилка", isPresented: $showingAlert, actions: {
                                             Button("OK", role: .cancel) {
                                                 self.recognizedText = nil
-                                                bgColor = Color.blue
+                                                withAnimation(.easeInOut(duration: 2.0)){
+                                                    bgColor = Color.blue
+                                                }
                                                 self.cData = [:]
 
                                             }
@@ -83,7 +88,9 @@ struct SearchScreen: View {
                                             Text(errorMessage)
                                         })
                                         .onAppear {
-                                            bgColor = Color.red
+                                            withAnimation(.easeInOut(duration: 2.0)){
+                                                bgColor = Color.red
+                                            }
                                             showingAlert = true
                                         }
                                 } else {

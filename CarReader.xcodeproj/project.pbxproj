@@ -13,10 +13,10 @@
 		C9625B542C4E9812007C9B97 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C9625B532C4E9812007C9B97 /* FirebaseFirestore */; };
 		C9625B562C4E9812007C9B97 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9625B552C4E9812007C9B97 /* FirebaseFirestoreSwift */; };
 		C9625B582C4E982C007C9B97 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9625B572C4E982C007C9B97 /* Database.swift */; };
-		C9625B5F2C4EF9A5007C9B97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9625B5E2C4EF9A5007C9B97 /* GoogleService-Info.plist */; };
 		C9625B632C4F13CF007C9B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9625B622C4F13CF007C9B97 /* AppDelegate.swift */; };
 		C9639C632C432A2D003175F4 /* CarHistory.json in Resources */ = {isa = PBXBuildFile; fileRef = C9639C622C432A2D003175F4 /* CarHistory.json */; };
 		C9639C662C433185003175F4 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = C9639C652C433185003175F4 /* SwiftCSV */; };
+		C9772E8F2C52FD860009675C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9772E8E2C52FD860009675C /* GoogleService-Info.plist */; };
 		C9A8B3162C4313A90087C104 /* FileWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8B3152C4313A90087C104 /* FileWork.swift */; };
 		C9A9E3A22C42AFFC00EFA046 /* InfoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9E3A12C42AFFC00EFA046 /* InfoPreview.swift */; };
 		C9A9E3A42C42C6F700EFA046 /* SingleParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9E3A32C42C6F700EFA046 /* SingleParameterView.swift */; };
@@ -37,9 +37,9 @@
 		C900DB4B2C3F490300C040CB /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		C900DB4D2C3F54FC00C040CB /* SavedNumberBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNumberBox.swift; sourceTree = "<group>"; };
 		C9625B572C4E982C007C9B97 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		C9625B5E2C4EF9A5007C9B97 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9625B622C4F13CF007C9B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9639C622C432A2D003175F4 /* CarHistory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CarHistory.json; sourceTree = "<group>"; };
+		C9772E8E2C52FD860009675C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9A8B3152C4313A90087C104 /* FileWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWork.swift; sourceTree = "<group>"; };
 		C9A9E3A12C42AFFC00EFA046 /* InfoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPreview.swift; sourceTree = "<group>"; };
 		C9A9E3A32C42C6F700EFA046 /* SingleParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleParameterView.swift; sourceTree = "<group>"; };
@@ -115,10 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				C908F4D62C5052610056BEE6 /* Views */,
-				C9625B5E2C4EF9A5007C9B97 /* GoogleService-Info.plist */,
 				C9625B5B2C4EF106007C9B97 /* information */,
 				C9B04C952C40AA9E00AC89F5 /* trialFile.csv */,
 				C9C711F12C3DA3F700F910B6 /* CarReaderApp.swift */,
+				C9772E8E2C52FD860009675C /* GoogleService-Info.plist */,
 				C9625B572C4E982C007C9B97 /* Database.swift */,
 				C9625B622C4F13CF007C9B97 /* AppDelegate.swift */,
 				C9A8B3152C4313A90087C104 /* FileWork.swift */,
@@ -209,9 +209,9 @@
 			files = (
 				C9C711FB2C3DA3F900F910B6 /* Preview Assets.xcassets in Resources */,
 				C9639C632C432A2D003175F4 /* CarHistory.json in Resources */,
+				C9772E8F2C52FD860009675C /* GoogleService-Info.plist in Resources */,
 				C9C711F82C3DA3F900F910B6 /* Assets.xcassets in Resources */,
 				C9B04C962C40AA9E00AC89F5 /* trialFile.csv in Resources */,
-				C9625B5F2C4EF9A5007C9B97 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
