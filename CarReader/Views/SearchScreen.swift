@@ -13,6 +13,7 @@ struct SearchScreen: View {
     @State private var navigateToTheNextPage = false
     @State private var showCarInfo = false
     @State private var showNumbers = false
+    @State private var isLoading = true
     @State private var bgColor = Color.blue
     @EnvironmentObject var carHistoryManager: CarHistoryFileManager
     
@@ -52,43 +53,58 @@ struct SearchScreen: View {
                     Spacer()
                     VStack {
                         if let recognizedText = recognizedText {
-                            ProgressView("Завантаження...")
-                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                .foregroundColor(.white)
-                                .onAppear {
-                                    self.cData = NumbersCheck(num: recognizedText)
-                                }
-                            if cData.count <= 1 {
-                                Text("No Element Found")
-                                    .alert("Помилка", isPresented: $showingAlert, actions: {
-                                        Button("OK", role: .cancel) {
-                                            self.recognizedText = nil
-                                            bgColor = Color.blue
-                                        }
-                                    }, message: {
-                                        Text("Номеру не знайдено")
-                                    })
-                                    .onAppear {
-                                        bgColor = Color.red
-                                        showingAlert = true
-                                    }
-                            } else {
-                                ProgressView("Завантаження...")
+                            
+                            if cData.isEmpty {
+                                ProgressView()
                                     .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                    .foregroundColor(.white)
-                                    .onAppear {
-                                        showCarInfo = true
+                                    .scaleEffect(2.0)
+                                    .frame(minWidth: 100,idealWidth: .infinity, minHeight: 100, idealHeight: 150)
+                                    .onAppear{
+                                        Task{
+                                            self.cData = try await getNumberFromCloud(name: recognizedText, status: $isLoading)
+                                        }
                                     }
+                            }
+                            else {
+                                if let possibleError = cData["Error"]{
+                                    
+                                    let errorMessage = possibleError == "1" ? "Ключа не знайдено" :
+                                    (possibleError == "404" ? "Помилка зʼєднання з сервером" :
+                                        "Виникла невідома помилка")
+                                    Text("!")
+                                        .alert("Помилка", isPresented: $showingAlert, actions: {
+                                            Button("OK", role: .cancel) {
+                                                self.recognizedText = nil
+                                                bgColor = Color.blue
+                                                self.cData = [:]
+
+                                            }
+                                        }, message: {
+                                            Text(errorMessage)
+                                        })
+                                        .onAppear {
+                                            bgColor = Color.red
+                                            showingAlert = true
+                                        }
+                                } else {
+                                    ProgressView("Завантаження...")
+                                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                        .foregroundColor(.white)
+                                        .onAppear {
+                                            showCarInfo = true
+                                        }
+                                }
                             }
                         } else {
                             CameraView(recognizedText: $recognizedText)
                                 .edgesIgnoringSafeArea(.all)
                         }
                     }
-                    
+
                     .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                     .padding([.leading,.trailing,.bottom],10)
-                    
+                    Spacer()
+
                     Button{
                         showNumbers = true
                     }label: {

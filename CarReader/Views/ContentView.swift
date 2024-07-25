@@ -14,23 +14,32 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
                 ZStack {
                     ScrollView{
-                        Text(Greetings())
-                            .font(.largeTitle)
-                            .bold()
+                        VStack{
+                            HStack(alignment: .center){
+                                let greet = Greetings()
+                                Text(greet[0])
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundStyle(Color(.white))
+                                
+                                Image(systemName: greet[1])
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundStyle(Color(.white))
+                                    .onAppear{carHistoryManager.loadHistory()}
+                            }
                             .multilineTextAlignment(.center)
                             .padding(.top,30)
-                            .frame(maxWidth: .infinity)
-                            .foregroundStyle(Color(.white))
-                            .onAppear{carHistoryManager.loadHistory()}
-                        Spacer(minLength: 20)
-                        
+                            .frame(maxWidth: .infinity, maxHeight: 100)
+                            
+                            Spacer(minLength: 20)
 
-                        VStack{
                             if (carHistoryManager.carHistory.isEmpty){
                                 Text("Історії ще нема")
                                     .multilineTextAlignment(.center)
                                     .padding()
                                     .font(.title3)
+                                    .foregroundStyle(Color(.white))
                             }
                             else{
                                 Text("Нещодавні")

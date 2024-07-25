@@ -72,7 +72,10 @@ class CarHistoryFileManager: ObservableObject {
     }
     
     func saveCar(_ car: Car) {
-        carHistory.insert(car, at: 0) // Insert the new car at the beginning of the array
+
+        if carHistory.first != car{
+            carHistory.insert(car, at: 0) // Insert the new car at the beginning of the array
+        }
         if let encoded = try? JSONEncoder().encode(carHistory) {
             try? encoded.write(to: fileURL)
         }

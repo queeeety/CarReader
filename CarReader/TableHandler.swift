@@ -39,7 +39,7 @@ func NumbersCheck (num: String) -> [String:String]
     CyrNum = CyrNum.replacingOccurrences(of: " ", with: "")
     let fileName = "trialFile"
     let data : [[String:String]]
-    let keyOrder = ["N_REG_NEW", "REG_ADDR_KOATUU", "OPER_CODE", "OPER_NAME","D_REG", "DEP_CODE", "DEP", "BRAND", "MODEL", "VIN", "MAKE_YEAR", "COLOR", "KIND", "BODY", "PURPOSE", "FUEL", "CAPACITY", "OWN_WEIGHT", "TOTAL_WEIGHT"]
+//    let keyOrder = ["N_REG_NEW", "REG_ADDR_KOATUU", "OPER_CODE", "OPER_NAME","D_REG", "DEP_CODE", "DEP", "BRAND", "MODEL", "VIN", "MAKE_YEAR", "COLOR", "KIND", "BODY", "PURPOSE", "FUEL", "CAPACITY", "OWN_WEIGHT", "TOTAL_WEIGHT"]
     
     guard let filePath = Bundle.main.path(forResource: fileName, ofType: "csv") else {
         print("File not found")
